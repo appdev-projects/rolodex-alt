@@ -1,6 +1,6 @@
-namespace :dev do
+namespace(:dev) do
   desc "Hydrate the database with some dummy data to look at so that developing is easier"
-  task :prime => :environment do
+  task({ :prime => :environment }) do
     require "faker"
 
     if ActiveRecord::Base.connection.table_exists? "restaurants"
@@ -31,7 +31,7 @@ namespace :dev do
       end
 
       25.times do
-        new_record = {:name => Faker::Dessert.variety, :description => Faker::Desset.flavor, :dessert => true }
+        new_record = {:name => Faker::Dessert.variety, :description => Faker::Dessert.flavor, :dessert => true }
         dish_records.push(new_record)
       end
 

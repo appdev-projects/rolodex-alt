@@ -3,7 +3,7 @@ class CreateDishes < ActiveRecord::Migration[5.2]
     create_table :dishes do |t|
       t.string :name
       t.string :description
-      t.boolean :review
+      t.boolean :dessert
 
       t.timestamps
     end
